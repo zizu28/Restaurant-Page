@@ -1,0 +1,114 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.main-container {
+    display: grid;
+    grid-template: 150px 1fr / 1fr;
+    background-color: black;
+}
+
+
+/* Navigation pane design */
+.nav {
+    grid-row: 1 / 2;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    font-family: 'Times New Roman';
+    font-size: 32px;
+    font-weight: bold;
+    background-color: rgb(83, 72, 72);
+    color: white;
+}
+
+.restaurant-name {
+    grid-column: 1 / 2;
+    display: grid;
+    grid-template: 1fr / 1fr 1fr;
+}
+
+.font {
+    grid-column: 1 / 2;
+    font-size: 3.5em;
+    margin-top: 5px;
+}
+
+.name {
+    grid-column: 2 / 3;
+    font-size: 100px;
+    margin: 0;
+}
+
+.restaurant-action-btns {
+    grid-column: 2 / 3;
+    display: grid;
+    grid-template: 1fr / repeat(2, 1fr);
+    margin: 20px auto;
+    margin-right: 0;
+}
+
+.btns, .select-pages {
+    margin: 20px;
+}
+
+
+.btns {
+    grid-column: 1 / 2;
+    display: flex;
+    flex: 1;
+    gap: 10px;
+}
+
+.select-pages {
+    grid-column: 2 / 3;
+    margin-right: 0;
+    padding: 10px;
+}
+
+.pages {
+    padding: 10px;
+    border-radius: 10px;
+    font-family: 'Times New Roman';
+    font-size: 25px;
+    font-weight: bold;
+}
+
+button {
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 20px;
+    border-style: none;
+    box-shadow: 2px 2px 5px white;
+    font-family: 'Times New Roman';
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Restaurant content design */
+.content {
+    grid-row: 2 / 3;
+    width: 1500px;
+    height: 100vh;
+    margin: 0 auto;
+    background-image: url(/assets/1536017106.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.7;
+}
+
+.details {
+    font-family: 'Times New Roman';
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(214, 216, 127);
+}
