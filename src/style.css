@@ -11,7 +11,7 @@ body {
 .main-container {
     display: grid;
     grid-template: 150px 1fr / 1fr;
-    background-color: black;
+    background-color: gray;
 }
 
 
@@ -110,5 +110,4 @@ button {
     font-size: 25px;
     font-weight: bold;
     text-decoration: none;
-    color: rgb(214, 216, 127);
 }

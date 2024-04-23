@@ -1,4 +1,7 @@
 import './style.css';
+import './contact';
+import './menu';
+import createContact from './contact';
 
 // Create elements dynamically
 const masterContainer = document.createElement('div');
@@ -22,9 +25,6 @@ const welcome = document.createElement('h1');
 const introduction = document.createElement('p');
 const command = document.createElement('button');
 
-
-
-function createContent(){
     // Append options to select element
     const optionList = ['Booking', 'Our Teams', 'Testimonials'];
     optionList.forEach(option => {
@@ -35,6 +35,9 @@ function createContent(){
 
     // Append a label and select element to the selectPages div element
     pageLabel.textContent = "Pages";
+    pageLabel.addEventListener('click', () => {
+        selection.focus();
+    }) 
     selectPages.appendChild(pageLabel);
     selection.classList.add('pages');
     selectPages.appendChild(selection);
@@ -54,6 +57,7 @@ function createContent(){
     btnNames.forEach(btn => {
         const button = document.createElement('button');
         button.textContent = btn;
+        button.classList.add(btn);
         btns.appendChild(button);
     })
 
@@ -68,6 +72,7 @@ function createContent(){
     restaurantActionBtns.classList.add('restaurant-action-btns');
     navContainer.appendChild(restaurantActionBtns);
 
+function createContent(){
     // Append elements to content container
     welcome.textContent = 'Enjoy our delicious meals';
     welcome.classList.add('welcome');
@@ -97,3 +102,46 @@ masterContainer.classList.add('main-container');
 masterContainer.appendChild(container.navContainer);
 masterContainer.appendChild(container.content);
 document.body.appendChild(masterContainer);
+
+
+btns.addEventListener('click', (event) => {
+    const clickedButton = event.target.closest('button');
+    if(clickedButton.classList.contains('Home')){
+        clickedButton.style = 'box-shadow: 2px 2px 5px green';
+        if(container.content.parentNode === masterContainer){
+            masterContainer.removeChild(container.content)
+        }
+        if(container.navContainer.parentNode === masterContainer){
+            masterContainer.removeChild(container.navContainer)
+        }
+        masterContainer.classList.add('main-container');
+        masterContainer.appendChild(container.navContainer);
+        masterContainer.appendChild(container.content);
+        document.body.appendChild(masterContainer);
+    }
+    else if(clickedButton.classList.contains('Service')){
+        clickedButton.style = 'box-shadow: 2px 2px 5px green';
+    }
+    else if(clickedButton.classList.contains('About')){
+        clickedButton.style = 'box-shadow: 2px 2px 5px green';
+        if(container.content.parentNode === masterContainer){
+            masterContainer.removeChild(container.content)
+        }
+        if(container.navContainer.parentNode === masterContainer){
+            masterContainer.removeChild(container.navContainer)
+        }
+        masterContainer.classList.add('main-container');
+        masterContainer.appendChild(container.navContainer);
+        masterContainer.appendChild(createContact());
+        document.body.appendChild(masterContainer);
+    }
+    else if(clickedButton.classList.contains('Menu')){
+        clickedButton.style = 'box-shadow: 2px 2px 5px green';
+    }
+    else {
+        masterContainer.classList.add('main-container');
+        masterContainer.appendChild(container.navContainer);
+        masterContainer.appendChild(container.content);
+        document.body.appendChild(masterContainer);
+    }
+})
