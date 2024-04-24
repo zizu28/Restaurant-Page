@@ -88,19 +88,18 @@ function createContact(){
 
     upperContainer.style = 'grid-row: 1/2; margin: 0 auto; font-family: "Times New Roman"; font-size: 25px; font-weight: bold;';
 
-    lowerContainer.style = 'grid-row: 2/3; display: grid; grid-template: 1fr 50px / repeat(2, 1fr);' + 
-    'margin: 10px;';
+    lowerContainer.style = 'grid-row: 2/3; display: grid; grid-template: 1fr 50px / repeat(2, 1fr)';
 
-    lowerLeftDiv.style = 'grid-column: 1/2; grid-row: 1/2; display: grid; grid-template: repeat(3, 1fr)/1fr; gap: 20px; margin: 10px;';
+    lowerLeftDiv.style = 'grid-column: 1/2; grid-row: 1/2; display: grid; grid-template: repeat(3, 1fr)/1fr; gap: 15px; margin: 10px 10px 0 10px;';
 
     lowerRightDiv.style = 'grid-column: 2/3;';
 
-    rightTextArea.setAttribute('rows', 20); 
-    rightTextArea.setAttribute('cols', 100);
+    rightTextArea.setAttribute('rows', 18); 
+    rightTextArea.setAttribute('cols', 90);
     rightTextArea.setAttribute('placeholder', 'Write your comments here.');
     rightTextArea.style = 'margin: 10px; '
 
-    lowerButton.style = 'grid-row: 2/3; grid-column: 1/3';
+    lowerButton.style = 'grid-row: 2/3; grid-column: 2/3; padding: 10px';
 
     contactContent.style = "display: grid; grid-template: repeat(2, 1fr) / 1fr;" +
     "width: 1500px; height: 100vh; margin: 0 auto; background-image: url(/assets/1536017106.png);" +

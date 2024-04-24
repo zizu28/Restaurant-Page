@@ -1,6 +1,6 @@
 import './style.css';
 import './contact';
-import './menu';
+// import './menu';
 import createContact from './contact';
 
 // Create elements dynamically
@@ -72,7 +72,7 @@ const command = document.createElement('button');
     restaurantActionBtns.classList.add('restaurant-action-btns');
     navContainer.appendChild(restaurantActionBtns);
 
-function createContent(){
+const createContent = function(){
     // Append elements to content container
     welcome.textContent = 'Enjoy our delicious meals';
     welcome.classList.add('welcome');
@@ -94,54 +94,55 @@ function createContent(){
 
     
     return { content, navContainer };
-}
+}()
 
-const container = createContent();
+const contact = createContact();
+
 
 masterContainer.classList.add('main-container');
-masterContainer.appendChild(container.navContainer);
-masterContainer.appendChild(container.content);
+masterContainer.appendChild(createContent.navContainer);
+masterContainer.appendChild(createContent.content);
 document.body.appendChild(masterContainer);
+
+
+window.onload = loadPage();
 
 
 btns.addEventListener('click', (event) => {
     const clickedButton = event.target.closest('button');
     if(clickedButton.classList.contains('Home')){
         clickedButton.style = 'box-shadow: 2px 2px 5px green';
-        if(container.content.parentNode === masterContainer){
-            masterContainer.removeChild(container.content)
-        }
-        if(container.navContainer.parentNode === masterContainer){
-            masterContainer.removeChild(container.navContainer)
-        }
-        masterContainer.classList.add('main-container');
-        masterContainer.appendChild(container.navContainer);
-        masterContainer.appendChild(container.content);
+        document.body.removeChild(masterContainer)
         document.body.appendChild(masterContainer);
+        masterContainer.classList.add('main-container');
+        masterContainer.appendChild(createContent.navContainer);
+        masterContainer.appendChild(createContent.content);
+        if(contact.parentNode === masterContainer){
+            masterContainer.removeChild(contact)
+        }
     }
     else if(clickedButton.classList.contains('Service')){
         clickedButton.style = 'box-shadow: 2px 2px 5px green';
     }
     else if(clickedButton.classList.contains('About')){
         clickedButton.style = 'box-shadow: 2px 2px 5px green';
-        if(container.content.parentNode === masterContainer){
-            masterContainer.removeChild(container.content)
-        }
-        if(container.navContainer.parentNode === masterContainer){
-            masterContainer.removeChild(container.navContainer)
-        }
-        masterContainer.classList.add('main-container');
-        masterContainer.appendChild(container.navContainer);
-        masterContainer.appendChild(createContact());
+        document.body.removeChild(masterContainer)
         document.body.appendChild(masterContainer);
+        masterContainer.classList.add('main-container');
+        masterContainer.appendChild(createContent.navContainer);
+        masterContainer.appendChild(contact);
+        if(createContent.content.parentNode === masterContainer){
+            masterContainer.removeChild(createContent.content)
+        }
     }
     else if(clickedButton.classList.contains('Menu')){
         clickedButton.style = 'box-shadow: 2px 2px 5px green';
     }
-    else {
-        masterContainer.classList.add('main-container');
-        masterContainer.appendChild(container.navContainer);
-        masterContainer.appendChild(container.content);
-        document.body.appendChild(masterContainer);
-    }
 })
+
+function loadPage(){
+    masterContainer.classList.add('main-container');
+    masterContainer.appendChild(createContent.navContainer);
+    masterContainer.appendChild(createContent.content);
+    document.body.appendChild(masterContainer);
+}
