@@ -1,156 +1,695 @@
-/*
- * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
- * This devtool is neither made for production nor for readable output files.
- * It uses "eval()" calls to create a separate source file in the browser devtools.
- * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
- * or disable the default devtool with "devtool: false".
- * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
- */
 /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
-/******/ 	var __webpack_modules__ = ({
+/******/ 	var __webpack_modules__ = ([
+/* 0 */,
+/* 1 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./src/style.css":
-/*!*************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./src/style.css ***!
-  \*************************************************************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_style_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(8);
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var options = {};
+
+options.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
+options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
+options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
+options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
+options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_style_css__WEBPACK_IMPORTED_MODULE_6__["default"], options);
+
+
+
+
+       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_style_css__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_style_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_style_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
+
+
+/***/ }),
+/* 2 */
+/***/ ((module) => {
+
+
+
+var stylesInDOM = [];
+function getIndexByIdentifier(identifier) {
+  var result = -1;
+  for (var i = 0; i < stylesInDOM.length; i++) {
+    if (stylesInDOM[i].identifier === identifier) {
+      result = i;
+      break;
+    }
+  }
+  return result;
+}
+function modulesToDom(list, options) {
+  var idCountMap = {};
+  var identifiers = [];
+  for (var i = 0; i < list.length; i++) {
+    var item = list[i];
+    var id = options.base ? item[0] + options.base : item[0];
+    var count = idCountMap[id] || 0;
+    var identifier = "".concat(id, " ").concat(count);
+    idCountMap[id] = count + 1;
+    var indexByIdentifier = getIndexByIdentifier(identifier);
+    var obj = {
+      css: item[1],
+      media: item[2],
+      sourceMap: item[3],
+      supports: item[4],
+      layer: item[5]
+    };
+    if (indexByIdentifier !== -1) {
+      stylesInDOM[indexByIdentifier].references++;
+      stylesInDOM[indexByIdentifier].updater(obj);
+    } else {
+      var updater = addElementStyle(obj, options);
+      options.byIndex = i;
+      stylesInDOM.splice(i, 0, {
+        identifier: identifier,
+        updater: updater,
+        references: 1
+      });
+    }
+    identifiers.push(identifier);
+  }
+  return identifiers;
+}
+function addElementStyle(obj, options) {
+  var api = options.domAPI(options);
+  api.update(obj);
+  var updater = function updater(newObj) {
+    if (newObj) {
+      if (newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap && newObj.supports === obj.supports && newObj.layer === obj.layer) {
+        return;
+      }
+      api.update(obj = newObj);
+    } else {
+      api.remove();
+    }
+  };
+  return updater;
+}
+module.exports = function (list, options) {
+  options = options || {};
+  list = list || [];
+  var lastIdentifiers = modulesToDom(list, options);
+  return function update(newList) {
+    newList = newList || [];
+    for (var i = 0; i < lastIdentifiers.length; i++) {
+      var identifier = lastIdentifiers[i];
+      var index = getIndexByIdentifier(identifier);
+      stylesInDOM[index].references--;
+    }
+    var newLastIdentifiers = modulesToDom(newList, options);
+    for (var _i = 0; _i < lastIdentifiers.length; _i++) {
+      var _identifier = lastIdentifiers[_i];
+      var _index = getIndexByIdentifier(_identifier);
+      if (stylesInDOM[_index].references === 0) {
+        stylesInDOM[_index].updater();
+        stylesInDOM.splice(_index, 1);
+      }
+    }
+    lastIdentifiers = newLastIdentifiers;
+  };
+};
+
+/***/ }),
+/* 3 */
+/***/ ((module) => {
+
+
+
+/* istanbul ignore next  */
+function apply(styleElement, options, obj) {
+  var css = "";
+  if (obj.supports) {
+    css += "@supports (".concat(obj.supports, ") {");
+  }
+  if (obj.media) {
+    css += "@media ".concat(obj.media, " {");
+  }
+  var needLayer = typeof obj.layer !== "undefined";
+  if (needLayer) {
+    css += "@layer".concat(obj.layer.length > 0 ? " ".concat(obj.layer) : "", " {");
+  }
+  css += obj.css;
+  if (needLayer) {
+    css += "}";
+  }
+  if (obj.media) {
+    css += "}";
+  }
+  if (obj.supports) {
+    css += "}";
+  }
+  var sourceMap = obj.sourceMap;
+  if (sourceMap && typeof btoa !== "undefined") {
+    css += "\n/*# sourceMappingURL=data:application/json;base64,".concat(btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))), " */");
+  }
+
+  // For old IE
+  /* istanbul ignore if  */
+  options.styleTagTransform(css, styleElement, options.options);
+}
+function removeStyleElement(styleElement) {
+  // istanbul ignore if
+  if (styleElement.parentNode === null) {
+    return false;
+  }
+  styleElement.parentNode.removeChild(styleElement);
+}
+
+/* istanbul ignore next  */
+function domAPI(options) {
+  if (typeof document === "undefined") {
+    return {
+      update: function update() {},
+      remove: function remove() {}
+    };
+  }
+  var styleElement = options.insertStyleElement(options);
+  return {
+    update: function update(obj) {
+      apply(styleElement, options, obj);
+    },
+    remove: function remove() {
+      removeStyleElement(styleElement);
+    }
+  };
+}
+module.exports = domAPI;
+
+/***/ }),
+/* 4 */
+/***/ ((module) => {
+
+
+
+var memo = {};
+
+/* istanbul ignore next  */
+function getTarget(target) {
+  if (typeof memo[target] === "undefined") {
+    var styleTarget = document.querySelector(target);
+
+    // Special case to return head of iframe instead of iframe itself
+    if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {
+      try {
+        // This will throw an exception if access to iframe is blocked
+        // due to cross-origin restrictions
+        styleTarget = styleTarget.contentDocument.head;
+      } catch (e) {
+        // istanbul ignore next
+        styleTarget = null;
+      }
+    }
+    memo[target] = styleTarget;
+  }
+  return memo[target];
+}
+
+/* istanbul ignore next  */
+function insertBySelector(insert, style) {
+  var target = getTarget(insert);
+  if (!target) {
+    throw new Error("Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.");
+  }
+  target.appendChild(style);
+}
+module.exports = insertBySelector;
+
+/***/ }),
+/* 5 */
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+
+
+/* istanbul ignore next  */
+function setAttributesWithoutAttributes(styleElement) {
+  var nonce =  true ? __webpack_require__.nc : 0;
+  if (nonce) {
+    styleElement.setAttribute("nonce", nonce);
+  }
+}
+module.exports = setAttributesWithoutAttributes;
+
+/***/ }),
+/* 6 */
+/***/ ((module) => {
+
+
+
+/* istanbul ignore next  */
+function insertStyleElement(options) {
+  var element = document.createElement("style");
+  options.setAttributes(element, options.attributes);
+  options.insert(element, options.options);
+  return element;
+}
+module.exports = insertStyleElement;
+
+/***/ }),
+/* 7 */
+/***/ ((module) => {
+
+
+
+/* istanbul ignore next  */
+function styleTagTransform(css, styleElement) {
+  if (styleElement.styleSheet) {
+    styleElement.styleSheet.cssText = css;
+  } else {
+    while (styleElement.firstChild) {
+      styleElement.removeChild(styleElement.firstChild);
+    }
+    styleElement.appendChild(document.createTextNode(css));
+  }
+}
+module.exports = styleTagTransform;
+
+/***/ }),
+/* 8 */
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/getUrl.js */ \"./node_modules/css-loader/dist/runtime/getUrl.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);\n// Imports\n\n\n\nvar ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../../../../assets/1536017106.png */ \"./assets/1536017106.png\"), __webpack_require__.b);\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\nvar ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, `* {\n    box-sizing: border-box;\n}\n\nbody {\n    height: 100%;\n    margin: 0;\n    padding: 0;\n}\n\n.main-container {\n    display: grid;\n    grid-template: 150px 1fr / 1fr;\n    background-color: gray;\n}\n\n\n/* Navigation pane design */\n.nav {\n    grid-row: 1 / 2;\n    display: grid;\n    grid-template-columns: 1fr 5fr;\n    font-family: 'Times New Roman';\n    font-size: 32px;\n    font-weight: bold;\n    background-color: rgb(83, 72, 72);\n    color: white;\n}\n\n.restaurant-name {\n    grid-column: 1 / 2;\n    display: grid;\n    grid-template: 1fr / 1fr 1fr;\n}\n\n.font {\n    grid-column: 1 / 2;\n    font-size: 3.5em;\n    margin-top: 5px;\n}\n\n.name {\n    grid-column: 2 / 3;\n    font-size: 100px;\n    margin: 0;\n}\n\n.restaurant-action-btns {\n    grid-column: 2 / 3;\n    display: grid;\n    grid-template: 1fr / repeat(2, 1fr);\n    margin: 20px auto;\n    margin-right: 0;\n}\n\n.btns, .select-pages {\n    margin: 20px;\n}\n\n\n.btns {\n    grid-column: 1 / 2;\n    display: flex;\n    flex: 1;\n    gap: 10px;\n}\n\n.select-pages {\n    grid-column: 2 / 3;\n    margin-right: 0;\n    padding: 10px;\n}\n\n.pages {\n    padding: 10px;\n    border-radius: 10px;\n    font-family: 'Times New Roman';\n    font-size: 25px;\n    font-weight: bold;\n}\n\nbutton {\n    margin: 0 auto;\n    padding: 10px;\n    border-radius: 20px;\n    border-style: none;\n    box-shadow: 2px 2px 5px white;\n    font-family: 'Times New Roman';\n    font-size: 25px;\n    font-weight: bold;\n    text-decoration: none;\n    cursor: pointer;\n}\n\n/* Restaurant content design */\n.content {\n    grid-row: 2 / 3;\n    width: 1500px;\n    height: 100vh;\n    margin: 0 auto;\n    background-image: url(${___CSS_LOADER_URL_REPLACEMENT_0___});\n    background-position: center;\n    background-repeat: no-repeat;\n    background-size: cover;\n    opacity: 0.7;\n}\n\n.details {\n    font-family: 'Times New Roman';\n    font-size: 25px;\n    font-weight: bold;\n    text-decoration: none;\n}`, \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://restaurant-page/./src/style.css?./node_modules/css-loader/dist/cjs.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(11);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
+// Imports
+
+
+
+var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(12), __webpack_require__.b);
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, `* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.main-container {
+    display: grid;
+    grid-template: 150px 1fr / 1fr;
+    background-color: gray;
+}
+
+
+/* Navigation pane design */
+.nav {
+    grid-row: 1 / 2;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    font-family: 'Times New Roman';
+    font-size: 32px;
+    font-weight: bold;
+    background-color: rgb(83, 72, 72);
+    color: white;
+}
+
+.restaurant-name {
+    grid-column: 1 / 2;
+    display: grid;
+    grid-template: 1fr / 1fr 1fr;
+}
+
+.font {
+    grid-column: 1 / 2;
+    font-size: 3.5em;
+    margin-top: 5px;
+}
+
+.name {
+    grid-column: 2 / 3;
+    font-size: 100px;
+    margin: 0;
+}
+
+.restaurant-action-btns {
+    grid-column: 2 / 3;
+    display: grid;
+    grid-template: 1fr / repeat(2, 1fr);
+    margin: 20px auto;
+    margin-right: 0;
+}
+
+.btns, .select-pages {
+    margin: 20px;
+}
+
+
+.btns {
+    grid-column: 1 / 2;
+    display: flex;
+    flex: 1;
+    gap: 10px;
+}
+
+.select-pages {
+    grid-column: 2 / 3;
+    margin-right: 0;
+    padding: 10px;
+}
+
+.pages {
+    padding: 10px;
+    border-radius: 10px;
+    font-family: 'Times New Roman';
+    font-size: 25px;
+    font-weight: bold;
+}
+
+button {
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 20px;
+    border-style: none;
+    box-shadow: 2px 2px 5px white;
+    font-family: 'Times New Roman';
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Restaurant content design */
+.content {
+    grid-row: 2 / 3;
+    width: 1500px;
+    height: 100vh;
+    margin: 0 auto;
+    background-image: url(${___CSS_LOADER_URL_REPLACEMENT_0___});
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.7;
+}
+
+.details {
+    font-family: 'Times New Roman';
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+}`, ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
 
 /***/ }),
-
-/***/ "./node_modules/css-loader/dist/runtime/api.js":
-/*!*****************************************************!*\
-  !*** ./node_modules/css-loader/dist/runtime/api.js ***!
-  \*****************************************************/
+/* 9 */
 /***/ ((module) => {
 
-eval("\n\n/*\n  MIT License http://www.opensource.org/licenses/mit-license.php\n  Author Tobias Koppers @sokra\n*/\nmodule.exports = function (cssWithMappingToString) {\n  var list = [];\n\n  // return the list of modules as css string\n  list.toString = function toString() {\n    return this.map(function (item) {\n      var content = \"\";\n      var needLayer = typeof item[5] !== \"undefined\";\n      if (item[4]) {\n        content += \"@supports (\".concat(item[4], \") {\");\n      }\n      if (item[2]) {\n        content += \"@media \".concat(item[2], \" {\");\n      }\n      if (needLayer) {\n        content += \"@layer\".concat(item[5].length > 0 ? \" \".concat(item[5]) : \"\", \" {\");\n      }\n      content += cssWithMappingToString(item);\n      if (needLayer) {\n        content += \"}\";\n      }\n      if (item[2]) {\n        content += \"}\";\n      }\n      if (item[4]) {\n        content += \"}\";\n      }\n      return content;\n    }).join(\"\");\n  };\n\n  // import a list of modules into the list\n  list.i = function i(modules, media, dedupe, supports, layer) {\n    if (typeof modules === \"string\") {\n      modules = [[null, modules, undefined]];\n    }\n    var alreadyImportedModules = {};\n    if (dedupe) {\n      for (var k = 0; k < this.length; k++) {\n        var id = this[k][0];\n        if (id != null) {\n          alreadyImportedModules[id] = true;\n        }\n      }\n    }\n    for (var _k = 0; _k < modules.length; _k++) {\n      var item = [].concat(modules[_k]);\n      if (dedupe && alreadyImportedModules[item[0]]) {\n        continue;\n      }\n      if (typeof layer !== \"undefined\") {\n        if (typeof item[5] === \"undefined\") {\n          item[5] = layer;\n        } else {\n          item[1] = \"@layer\".concat(item[5].length > 0 ? \" \".concat(item[5]) : \"\", \" {\").concat(item[1], \"}\");\n          item[5] = layer;\n        }\n      }\n      if (media) {\n        if (!item[2]) {\n          item[2] = media;\n        } else {\n          item[1] = \"@media \".concat(item[2], \" {\").concat(item[1], \"}\");\n          item[2] = media;\n        }\n      }\n      if (supports) {\n        if (!item[4]) {\n          item[4] = \"\".concat(supports);\n        } else {\n          item[1] = \"@supports (\".concat(item[4], \") {\").concat(item[1], \"}\");\n          item[4] = supports;\n        }\n      }\n      list.push(item);\n    }\n  };\n  return list;\n};\n\n//# sourceURL=webpack://restaurant-page/./node_modules/css-loader/dist/runtime/api.js?");
+
+
+module.exports = function (i) {
+  return i[1];
+};
 
 /***/ }),
-
-/***/ "./node_modules/css-loader/dist/runtime/getUrl.js":
-/*!********************************************************!*\
-  !*** ./node_modules/css-loader/dist/runtime/getUrl.js ***!
-  \********************************************************/
+/* 10 */
 /***/ ((module) => {
 
-eval("\n\nmodule.exports = function (url, options) {\n  if (!options) {\n    options = {};\n  }\n  if (!url) {\n    return url;\n  }\n  url = String(url.__esModule ? url.default : url);\n\n  // If url is already wrapped in quotes, remove them\n  if (/^['\"].*['\"]$/.test(url)) {\n    url = url.slice(1, -1);\n  }\n  if (options.hash) {\n    url += options.hash;\n  }\n\n  // Should url be wrapped?\n  // See https://drafts.csswg.org/css-values-3/#urls\n  if (/[\"'() \\t\\n]|(%20)/.test(url) || options.needQuotes) {\n    return \"\\\"\".concat(url.replace(/\"/g, '\\\\\"').replace(/\\n/g, \"\\\\n\"), \"\\\"\");\n  }\n  return url;\n};\n\n//# sourceURL=webpack://restaurant-page/./node_modules/css-loader/dist/runtime/getUrl.js?");
+
+
+/*
+  MIT License http://www.opensource.org/licenses/mit-license.php
+  Author Tobias Koppers @sokra
+*/
+module.exports = function (cssWithMappingToString) {
+  var list = [];
+
+  // return the list of modules as css string
+  list.toString = function toString() {
+    return this.map(function (item) {
+      var content = "";
+      var needLayer = typeof item[5] !== "undefined";
+      if (item[4]) {
+        content += "@supports (".concat(item[4], ") {");
+      }
+      if (item[2]) {
+        content += "@media ".concat(item[2], " {");
+      }
+      if (needLayer) {
+        content += "@layer".concat(item[5].length > 0 ? " ".concat(item[5]) : "", " {");
+      }
+      content += cssWithMappingToString(item);
+      if (needLayer) {
+        content += "}";
+      }
+      if (item[2]) {
+        content += "}";
+      }
+      if (item[4]) {
+        content += "}";
+      }
+      return content;
+    }).join("");
+  };
+
+  // import a list of modules into the list
+  list.i = function i(modules, media, dedupe, supports, layer) {
+    if (typeof modules === "string") {
+      modules = [[null, modules, undefined]];
+    }
+    var alreadyImportedModules = {};
+    if (dedupe) {
+      for (var k = 0; k < this.length; k++) {
+        var id = this[k][0];
+        if (id != null) {
+          alreadyImportedModules[id] = true;
+        }
+      }
+    }
+    for (var _k = 0; _k < modules.length; _k++) {
+      var item = [].concat(modules[_k]);
+      if (dedupe && alreadyImportedModules[item[0]]) {
+        continue;
+      }
+      if (typeof layer !== "undefined") {
+        if (typeof item[5] === "undefined") {
+          item[5] = layer;
+        } else {
+          item[1] = "@layer".concat(item[5].length > 0 ? " ".concat(item[5]) : "", " {").concat(item[1], "}");
+          item[5] = layer;
+        }
+      }
+      if (media) {
+        if (!item[2]) {
+          item[2] = media;
+        } else {
+          item[1] = "@media ".concat(item[2], " {").concat(item[1], "}");
+          item[2] = media;
+        }
+      }
+      if (supports) {
+        if (!item[4]) {
+          item[4] = "".concat(supports);
+        } else {
+          item[1] = "@supports (".concat(item[4], ") {").concat(item[1], "}");
+          item[4] = supports;
+        }
+      }
+      list.push(item);
+    }
+  };
+  return list;
+};
 
 /***/ }),
-
-/***/ "./node_modules/css-loader/dist/runtime/noSourceMaps.js":
-/*!**************************************************************!*\
-  !*** ./node_modules/css-loader/dist/runtime/noSourceMaps.js ***!
-  \**************************************************************/
+/* 11 */
 /***/ ((module) => {
 
-eval("\n\nmodule.exports = function (i) {\n  return i[1];\n};\n\n//# sourceURL=webpack://restaurant-page/./node_modules/css-loader/dist/runtime/noSourceMaps.js?");
+
+
+module.exports = function (url, options) {
+  if (!options) {
+    options = {};
+  }
+  if (!url) {
+    return url;
+  }
+  url = String(url.__esModule ? url.default : url);
+
+  // If url is already wrapped in quotes, remove them
+  if (/^['"].*['"]$/.test(url)) {
+    url = url.slice(1, -1);
+  }
+  if (options.hash) {
+    url += options.hash;
+  }
+
+  // Should url be wrapped?
+  // See https://drafts.csswg.org/css-values-3/#urls
+  if (/["'() \t\n]|(%20)/.test(url) || options.needQuotes) {
+    return "\"".concat(url.replace(/"/g, '\\"').replace(/\n/g, "\\n"), "\"");
+  }
+  return url;
+};
 
 /***/ }),
-
-/***/ "./src/style.css":
-/*!***********************!*\
-  !*** ./src/style.css ***!
-  \***********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/styleDomAPI.js */ \"./node_modules/style-loader/dist/runtime/styleDomAPI.js\");\n/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/insertBySelector.js */ \"./node_modules/style-loader/dist/runtime/insertBySelector.js\");\n/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ \"./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js\");\n/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/insertStyleElement.js */ \"./node_modules/style-loader/dist/runtime/insertStyleElement.js\");\n/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/styleTagTransform.js */ \"./node_modules/style-loader/dist/runtime/styleTagTransform.js\");\n/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);\n/* harmony import */ var _node_modules_css_loader_dist_cjs_js_style_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../node_modules/css-loader/dist/cjs.js!./style.css */ \"./node_modules/css-loader/dist/cjs.js!./src/style.css\");\n\n      \n      \n      \n      \n      \n      \n      \n      \n      \n\nvar options = {};\n\noptions.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());\noptions.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());\noptions.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, \"head\");\noptions.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());\noptions.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());\n\nvar update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_style_css__WEBPACK_IMPORTED_MODULE_6__[\"default\"], options);\n\n\n\n\n       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_style_css__WEBPACK_IMPORTED_MODULE_6__[\"default\"] && _node_modules_css_loader_dist_cjs_js_style_css__WEBPACK_IMPORTED_MODULE_6__[\"default\"].locals ? _node_modules_css_loader_dist_cjs_js_style_css__WEBPACK_IMPORTED_MODULE_6__[\"default\"].locals : undefined);\n\n\n//# sourceURL=webpack://restaurant-page/./src/style.css?");
-
-/***/ }),
-
-/***/ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js":
-/*!****************************************************************************!*\
-  !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
-  \****************************************************************************/
-/***/ ((module) => {
-
-eval("\n\nvar stylesInDOM = [];\nfunction getIndexByIdentifier(identifier) {\n  var result = -1;\n  for (var i = 0; i < stylesInDOM.length; i++) {\n    if (stylesInDOM[i].identifier === identifier) {\n      result = i;\n      break;\n    }\n  }\n  return result;\n}\nfunction modulesToDom(list, options) {\n  var idCountMap = {};\n  var identifiers = [];\n  for (var i = 0; i < list.length; i++) {\n    var item = list[i];\n    var id = options.base ? item[0] + options.base : item[0];\n    var count = idCountMap[id] || 0;\n    var identifier = \"\".concat(id, \" \").concat(count);\n    idCountMap[id] = count + 1;\n    var indexByIdentifier = getIndexByIdentifier(identifier);\n    var obj = {\n      css: item[1],\n      media: item[2],\n      sourceMap: item[3],\n      supports: item[4],\n      layer: item[5]\n    };\n    if (indexByIdentifier !== -1) {\n      stylesInDOM[indexByIdentifier].references++;\n      stylesInDOM[indexByIdentifier].updater(obj);\n    } else {\n      var updater = addElementStyle(obj, options);\n      options.byIndex = i;\n      stylesInDOM.splice(i, 0, {\n        identifier: identifier,\n        updater: updater,\n        references: 1\n      });\n    }\n    identifiers.push(identifier);\n  }\n  return identifiers;\n}\nfunction addElementStyle(obj, options) {\n  var api = options.domAPI(options);\n  api.update(obj);\n  var updater = function updater(newObj) {\n    if (newObj) {\n      if (newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap && newObj.supports === obj.supports && newObj.layer === obj.layer) {\n        return;\n      }\n      api.update(obj = newObj);\n    } else {\n      api.remove();\n    }\n  };\n  return updater;\n}\nmodule.exports = function (list, options) {\n  options = options || {};\n  list = list || [];\n  var lastIdentifiers = modulesToDom(list, options);\n  return function update(newList) {\n    newList = newList || [];\n    for (var i = 0; i < lastIdentifiers.length; i++) {\n      var identifier = lastIdentifiers[i];\n      var index = getIndexByIdentifier(identifier);\n      stylesInDOM[index].references--;\n    }\n    var newLastIdentifiers = modulesToDom(newList, options);\n    for (var _i = 0; _i < lastIdentifiers.length; _i++) {\n      var _identifier = lastIdentifiers[_i];\n      var _index = getIndexByIdentifier(_identifier);\n      if (stylesInDOM[_index].references === 0) {\n        stylesInDOM[_index].updater();\n        stylesInDOM.splice(_index, 1);\n      }\n    }\n    lastIdentifiers = newLastIdentifiers;\n  };\n};\n\n//# sourceURL=webpack://restaurant-page/./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js?");
-
-/***/ }),
-
-/***/ "./node_modules/style-loader/dist/runtime/insertBySelector.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/style-loader/dist/runtime/insertBySelector.js ***!
-  \********************************************************************/
-/***/ ((module) => {
-
-eval("\n\nvar memo = {};\n\n/* istanbul ignore next  */\nfunction getTarget(target) {\n  if (typeof memo[target] === \"undefined\") {\n    var styleTarget = document.querySelector(target);\n\n    // Special case to return head of iframe instead of iframe itself\n    if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {\n      try {\n        // This will throw an exception if access to iframe is blocked\n        // due to cross-origin restrictions\n        styleTarget = styleTarget.contentDocument.head;\n      } catch (e) {\n        // istanbul ignore next\n        styleTarget = null;\n      }\n    }\n    memo[target] = styleTarget;\n  }\n  return memo[target];\n}\n\n/* istanbul ignore next  */\nfunction insertBySelector(insert, style) {\n  var target = getTarget(insert);\n  if (!target) {\n    throw new Error(\"Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.\");\n  }\n  target.appendChild(style);\n}\nmodule.exports = insertBySelector;\n\n//# sourceURL=webpack://restaurant-page/./node_modules/style-loader/dist/runtime/insertBySelector.js?");
-
-/***/ }),
-
-/***/ "./node_modules/style-loader/dist/runtime/insertStyleElement.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/style-loader/dist/runtime/insertStyleElement.js ***!
-  \**********************************************************************/
-/***/ ((module) => {
-
-eval("\n\n/* istanbul ignore next  */\nfunction insertStyleElement(options) {\n  var element = document.createElement(\"style\");\n  options.setAttributes(element, options.attributes);\n  options.insert(element, options.options);\n  return element;\n}\nmodule.exports = insertStyleElement;\n\n//# sourceURL=webpack://restaurant-page/./node_modules/style-loader/dist/runtime/insertStyleElement.js?");
-
-/***/ }),
-
-/***/ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js":
-/*!**********************************************************************************!*\
-  !*** ./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js ***!
-  \**********************************************************************************/
+/* 12 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("\n\n/* istanbul ignore next  */\nfunction setAttributesWithoutAttributes(styleElement) {\n  var nonce =  true ? __webpack_require__.nc : 0;\n  if (nonce) {\n    styleElement.setAttribute(\"nonce\", nonce);\n  }\n}\nmodule.exports = setAttributesWithoutAttributes;\n\n//# sourceURL=webpack://restaurant-page/./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js?");
+module.exports = __webpack_require__.p + "374a5bb0424499f14c0c.png";
 
 /***/ }),
-
-/***/ "./node_modules/style-loader/dist/runtime/styleDomAPI.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/style-loader/dist/runtime/styleDomAPI.js ***!
-  \***************************************************************/
-/***/ ((module) => {
-
-eval("\n\n/* istanbul ignore next  */\nfunction apply(styleElement, options, obj) {\n  var css = \"\";\n  if (obj.supports) {\n    css += \"@supports (\".concat(obj.supports, \") {\");\n  }\n  if (obj.media) {\n    css += \"@media \".concat(obj.media, \" {\");\n  }\n  var needLayer = typeof obj.layer !== \"undefined\";\n  if (needLayer) {\n    css += \"@layer\".concat(obj.layer.length > 0 ? \" \".concat(obj.layer) : \"\", \" {\");\n  }\n  css += obj.css;\n  if (needLayer) {\n    css += \"}\";\n  }\n  if (obj.media) {\n    css += \"}\";\n  }\n  if (obj.supports) {\n    css += \"}\";\n  }\n  var sourceMap = obj.sourceMap;\n  if (sourceMap && typeof btoa !== \"undefined\") {\n    css += \"\\n/*# sourceMappingURL=data:application/json;base64,\".concat(btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))), \" */\");\n  }\n\n  // For old IE\n  /* istanbul ignore if  */\n  options.styleTagTransform(css, styleElement, options.options);\n}\nfunction removeStyleElement(styleElement) {\n  // istanbul ignore if\n  if (styleElement.parentNode === null) {\n    return false;\n  }\n  styleElement.parentNode.removeChild(styleElement);\n}\n\n/* istanbul ignore next  */\nfunction domAPI(options) {\n  if (typeof document === \"undefined\") {\n    return {\n      update: function update() {},\n      remove: function remove() {}\n    };\n  }\n  var styleElement = options.insertStyleElement(options);\n  return {\n    update: function update(obj) {\n      apply(styleElement, options, obj);\n    },\n    remove: function remove() {\n      removeStyleElement(styleElement);\n    }\n  };\n}\nmodule.exports = domAPI;\n\n//# sourceURL=webpack://restaurant-page/./node_modules/style-loader/dist/runtime/styleDomAPI.js?");
-
-/***/ }),
-
-/***/ "./node_modules/style-loader/dist/runtime/styleTagTransform.js":
-/*!*********************************************************************!*\
-  !*** ./node_modules/style-loader/dist/runtime/styleTagTransform.js ***!
-  \*********************************************************************/
-/***/ ((module) => {
-
-eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElement) {\n  if (styleElement.styleSheet) {\n    styleElement.styleSheet.cssText = css;\n  } else {\n    while (styleElement.firstChild) {\n      styleElement.removeChild(styleElement.firstChild);\n    }\n    styleElement.appendChild(document.createTextNode(css));\n  }\n}\nmodule.exports = styleTagTransform;\n\n//# sourceURL=webpack://restaurant-page/./node_modules/style-loader/dist/runtime/styleTagTransform.js?");
-
-/***/ }),
-
-/***/ "./src/contact.js":
-/*!************************!*\
-  !*** ./src/contact.js ***!
-  \************************/
+/* 13 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nfunction createContact(){\n    const contactContent = document.createElement('div');\n    const upperContainer = document.createElement('div');\n    const message = document.createElement('h1');\n    const contact = document.createElement('p');\n    const emailDiv = document.createElement('div');\n    const contactDiv = document.createElement('div');\n    const addressDiv = document.createElement('div');\n    const email = document.createElement('p');\n    const emailIcon = document.createElement('i');\n    const contactIcon = document.createElement('i');\n    const addressIcon = document.createElement('i');\n    const emailSpan = document.createElement('span');\n    const address = document.createElement('p');\n\n    message.textContent = \"GET IN TOUCH\";\n    upperContainer.appendChild(message);\n\n    const contactIconList = [\"fa-solid\", \"fa-phone-volume\"];\n    contactIconList.forEach(icon => {\n        contactIcon.classList.add(icon);\n    })\n    contact.textContent = 'Phone: +66611992102';\n    contactDiv.appendChild(contactIcon);\n    contactDiv.appendChild(contact);\n    upperContainer.appendChild(contactDiv);\n\n    const emailIconList = [\"fa-solid\", \"fa-envelope\"];\n    emailIconList.forEach(icon => {\n        emailIcon.classList.add(icon);\n    })\n    emailSpan.style.color = 'red';\n    emailSpan.textContent = 'zizu@practice.com';\n    email.textContent = 'Email:';\n    email.appendChild(emailSpan);\n    emailDiv.appendChild(emailIcon);\n    emailDiv.appendChild(email);\n    upperContainer.appendChild(emailDiv);\n\n    const addressIconList = [\"fa-solid\", \"fa-location-crosshairs\"];\n    addressIconList.forEach(icon => {\n        addressIcon.classList.add(icon);\n    })\n    contact.textContent = 'Phone: +66611992102';\n    address.textContent = 'Address: 18 Mahmoud Azmy Street, of 24th April Road, Tamale, Ghana.';\n    addressDiv.appendChild(addressIcon);\n    addressDiv.appendChild(address);\n    upperContainer.appendChild(addressDiv);\n\n\n    const lowerContainer = document.createElement('form');\n    const lowerLeftDiv = document.createElement('div');\n    const leftTextInput = document.createElement('input');\n    const leftEmailInput = document.createElement('input');\n    const leftTelInput = document.createElement('input');\n    const lowerRightDiv = document.createElement('div');\n    const rightTextArea = document.createElement('textarea');\n    const lowerButton = document.createElement('button');\n\n    leftTextInput.setAttribute('placeholder', 'Your Name:')\n    leftTextInput.setAttribute('required', 'true');\n    leftTextInput.style = 'font-family: \"Times New Roman\"; font-size: 16px; font-weight: bold; border-radius: 10px;'+\n    'box-shadow: 1px 1px 3px white; border-style: none; line-height: 120%';\n\n    leftEmailInput.setAttribute('placeholder', 'Your Email Address Here:')\n    leftEmailInput.setAttribute('required', 'true');\n    leftEmailInput.style = 'font-family: \"Times New Roman\"; font-size: 16px; font-weight: bold; border-radius: 10px;'+ \n    'box-shadow: 1px 1px 3px white; border-style: none;';\n\n    leftTelInput.setAttribute('placeholder', 'Your Phone Number:')\n    leftTelInput.setAttribute('required', 'true');\n    leftTelInput.style = 'font-family: \"Times New Roman\"; font-size: 16px; font-weight: bold; border-radius: 10px;'+\n    'box-shadow: 1px 1px 3px white; border-style: none;';\n\n    lowerLeftDiv.appendChild(leftTextInput);\n    lowerLeftDiv.appendChild(leftEmailInput);\n    lowerLeftDiv.appendChild(leftTelInput);\n\n    lowerRightDiv.appendChild(rightTextArea);\n\n    lowerContainer.appendChild(lowerLeftDiv);\n    lowerContainer.appendChild(lowerRightDiv);\n    lowerButton.textContent = \"SEND MESSAGE\";\n    lowerContainer.appendChild(lowerButton);\n    \n    contactContent.appendChild(upperContainer);\n    contactContent.appendChild(lowerContainer);\n\n    upperContainer.style = 'grid-row: 1/2; margin: 0 auto; font-family: \"Times New Roman\"; font-size: 25px; font-weight: bold;';\n\n    lowerContainer.style = 'grid-row: 2/3; display: grid; grid-template: 1fr 50px / repeat(2, 1fr)';\n\n    lowerLeftDiv.style = 'grid-column: 1/2; grid-row: 1/2; display: grid; grid-template: repeat(3, 1fr)/1fr; gap: 15px; margin: 10px 10px 0 10px;';\n\n    lowerRightDiv.style = 'grid-column: 2/3;';\n\n    rightTextArea.setAttribute('rows', 18); \n    rightTextArea.setAttribute('cols', 90);\n    rightTextArea.setAttribute('placeholder', 'Write your comments here.');\n    rightTextArea.style = 'margin: 10px; '\n\n    lowerButton.style = 'grid-row: 2/3; grid-column: 2/3; padding: 10px';\n\n    contactContent.style = \"display: grid; grid-template: repeat(2, 1fr) / 1fr;\" +\n    \"width: 1500px; height: 100vh; margin: 0 auto; background-image: url(/assets/1536017106.png);\" +\n    \"background-position: center; background-repeat: no-repeat; background-size: cover; opacity: 0.7;\";\n    \n    return contactContent;\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createContact);\n\n//# sourceURL=webpack://restaurant-page/./src/contact.js?");
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function createContact(){
+    const contactContent = document.createElement('div');
+    const upperContainer = document.createElement('div');
+    const message = document.createElement('h1');
+    const contact = document.createElement('p');
+    const emailDiv = document.createElement('div');
+    const contactDiv = document.createElement('div');
+    const addressDiv = document.createElement('div');
+    const email = document.createElement('p');
+    const emailIcon = document.createElement('i');
+    const contactIcon = document.createElement('i');
+    const addressIcon = document.createElement('i');
+    const emailSpan = document.createElement('span');
+    const address = document.createElement('p');
 
-/***/ }),
+    message.textContent = "GET IN TOUCH";
+    upperContainer.appendChild(message);
 
-/***/ "./src/index.js":
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+    const contactIconList = ["fa-solid", "fa-phone-volume"];
+    contactIconList.forEach(icon => {
+        contactIcon.classList.add(icon);
+    })
+    contact.textContent = 'Phone: +66611992102';
+    contactDiv.appendChild(contactIcon);
+    contactDiv.appendChild(contact);
+    upperContainer.appendChild(contactDiv);
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _contact__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./contact */ \"./src/contact.js\");\n\n\n// import './menu';\n\n\n// Create elements dynamically\nconst masterContainer = document.createElement('div');\n   \n// Navigation elements\nconst navContainer = document.createElement('div');\nconst content = document.createElement('div');\nconst restaurantName = document.createElement('div');\nconst restaurantActionBtns = document.createElement('div');\nconst btns = document.createElement('div');\nconst selectPages = document.createElement('div');\nconst pageLabel = document.createElement('label');\nconst selection = document.createElement('select');\nconst navIcon = document.createElement('i');\nconst navH1 = document.createElement('h1');\n\n// Content elements\nconst divider = document.createElement('div');\nconst details = document.createElement('div');\nconst welcome = document.createElement('h1');\nconst introduction = document.createElement('p');\nconst command = document.createElement('button');\n\n    // Append options to select element\n    const optionList = ['Booking', 'Our Teams', 'Testimonials'];\n    optionList.forEach(option => {\n        const opt = document.createElement('option');\n        opt.textContent = option;\n        selection.appendChild(opt);\n    })\n\n    // Append a label and select element to the selectPages div element\n    pageLabel.textContent = \"Pages\";\n    pageLabel.addEventListener('click', () => {\n        selection.focus();\n    }) \n    selectPages.appendChild(pageLabel);\n    selection.classList.add('pages');\n    selectPages.appendChild(selection);\n\n    // Append icons and h1 elements to restaurantName div element\n    const restaurantNavIcons = [\"fa-solid\", \"fa-utensils\", \"font\"];\n    restaurantNavIcons.forEach(icon => {\n        navIcon.classList.add(icon);\n    })\n    restaurantName.appendChild(navIcon);\n    navH1.classList.add('name');\n    navH1.textContent = 'Zulka';\n    restaurantName.appendChild(navH1);\n\n    // Append buttons to btns div element\n    const btnNames = ['Home', 'About', 'Service', 'Menu'];\n    btnNames.forEach(btn => {\n        const button = document.createElement('button');\n        button.textContent = btn;\n        button.classList.add(btn);\n        btns.appendChild(button);\n    })\n\n    // Append btns and selectPages div elements to the restaurantActionBtns parent container\n    btns.classList.add('btns');\n    restaurantActionBtns.appendChild(btns);\n    selectPages.classList.add('select-pages');\n    restaurantActionBtns.appendChild(selectPages);\n\n    restaurantName.classList.add('restaurant-name');\n    navContainer.appendChild(restaurantName);\n    restaurantActionBtns.classList.add('restaurant-action-btns');\n    navContainer.appendChild(restaurantActionBtns);\n\nconst createContent = function(){\n    // Append elements to content container\n    welcome.textContent = 'Enjoy our delicious meals';\n    welcome.classList.add('welcome');\n    introduction.classList.add('introduction');\n    introduction.textContent = \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"\n    command.classList.add('command');\n    command.textContent = \"BOOK A TABLE\";\n    details.appendChild(welcome);\n    details.appendChild(introduction);\n    details.appendChild(command);\n    details.classList.add('details');\n\n    divider.appendChild(details);\n    divider.classList.add('divider');\n    content.appendChild(divider);\n\n    navContainer.classList.add('nav');\n    content.classList.add('content');\n\n    \n    return { content, navContainer };\n}()\n\nconst contact = (0,_contact__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n\n\nmasterContainer.classList.add('main-container');\nmasterContainer.appendChild(createContent.navContainer);\nmasterContainer.appendChild(createContent.content);\ndocument.body.appendChild(masterContainer);\n\n\nwindow.onload = loadPage();\n\n\nbtns.addEventListener('click', (event) => {\n    const clickedButton = event.target.closest('button');\n    if(clickedButton.classList.contains('Home')){\n        clickedButton.style = 'box-shadow: 2px 2px 5px green';\n        document.body.removeChild(masterContainer)\n        document.body.appendChild(masterContainer);\n        masterContainer.classList.add('main-container');\n        masterContainer.appendChild(createContent.navContainer);\n        masterContainer.appendChild(createContent.content);\n        if(contact.parentNode === masterContainer){\n            masterContainer.removeChild(contact)\n        }\n    }\n    else if(clickedButton.classList.contains('Service')){\n        clickedButton.style = 'box-shadow: 2px 2px 5px green';\n    }\n    else if(clickedButton.classList.contains('About')){\n        clickedButton.style = 'box-shadow: 2px 2px 5px green';\n        document.body.removeChild(masterContainer)\n        document.body.appendChild(masterContainer);\n        masterContainer.classList.add('main-container');\n        masterContainer.appendChild(createContent.navContainer);\n        masterContainer.appendChild(contact);\n        if(createContent.content.parentNode === masterContainer){\n            masterContainer.removeChild(createContent.content)\n        }\n    }\n    else if(clickedButton.classList.contains('Menu')){\n        clickedButton.style = 'box-shadow: 2px 2px 5px green';\n    }\n})\n\nfunction loadPage(){\n    masterContainer.classList.add('main-container');\n    masterContainer.appendChild(createContent.navContainer);\n    masterContainer.appendChild(createContent.content);\n    document.body.appendChild(masterContainer);\n}\n\n//# sourceURL=webpack://restaurant-page/./src/index.js?");
+    const emailIconList = ["fa-solid", "fa-envelope"];
+    emailIconList.forEach(icon => {
+        emailIcon.classList.add(icon);
+    })
+    emailSpan.style.color = 'red';
+    emailSpan.textContent = 'zizu@practice.com';
+    email.textContent = 'Email:';
+    email.appendChild(emailSpan);
+    emailDiv.appendChild(emailIcon);
+    emailDiv.appendChild(email);
+    upperContainer.appendChild(emailDiv);
 
-/***/ }),
+    const addressIconList = ["fa-solid", "fa-location-crosshairs"];
+    addressIconList.forEach(icon => {
+        addressIcon.classList.add(icon);
+    })
+    contact.textContent = 'Phone: +66611992102';
+    address.textContent = 'Address: 18 Mahmoud Azmy Street, of 24th April Road, Tamale, Ghana.';
+    addressDiv.appendChild(addressIcon);
+    addressDiv.appendChild(address);
+    upperContainer.appendChild(addressDiv);
 
-/***/ "./assets/1536017106.png":
-/*!*******************************!*\
-  !*** ./assets/1536017106.png ***!
-  \*******************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("module.exports = __webpack_require__.p + \"374a5bb0424499f14c0c.png\";\n\n//# sourceURL=webpack://restaurant-page/./assets/1536017106.png?");
+    const lowerContainer = document.createElement('form');
+    const lowerLeftDiv = document.createElement('div');
+    const leftTextInput = document.createElement('input');
+    const leftEmailInput = document.createElement('input');
+    const leftTelInput = document.createElement('input');
+    const lowerRightDiv = document.createElement('div');
+    const rightTextArea = document.createElement('textarea');
+    const lowerButton = document.createElement('button');
+
+    leftTextInput.setAttribute('placeholder', 'Your Name:')
+    leftTextInput.setAttribute('required', 'true');
+    leftTextInput.style = 'font-family: "Times New Roman"; font-size: 16px; font-weight: bold; border-radius: 10px;'+
+    'box-shadow: 1px 1px 3px white; border-style: none; line-height: 120%';
+
+    leftEmailInput.setAttribute('placeholder', 'Your Email Address Here:')
+    leftEmailInput.setAttribute('required', 'true');
+    leftEmailInput.style = 'font-family: "Times New Roman"; font-size: 16px; font-weight: bold; border-radius: 10px;'+ 
+    'box-shadow: 1px 1px 3px white; border-style: none;';
+
+    leftTelInput.setAttribute('placeholder', 'Your Phone Number:')
+    leftTelInput.setAttribute('required', 'true');
+    leftTelInput.style = 'font-family: "Times New Roman"; font-size: 16px; font-weight: bold; border-radius: 10px;'+
+    'box-shadow: 1px 1px 3px white; border-style: none;';
+
+    lowerLeftDiv.appendChild(leftTextInput);
+    lowerLeftDiv.appendChild(leftEmailInput);
+    lowerLeftDiv.appendChild(leftTelInput);
+
+    lowerRightDiv.appendChild(rightTextArea);
+
+    lowerContainer.appendChild(lowerLeftDiv);
+    lowerContainer.appendChild(lowerRightDiv);
+    lowerButton.textContent = "SEND MESSAGE";
+    lowerContainer.appendChild(lowerButton);
+    
+    contactContent.appendChild(upperContainer);
+    contactContent.appendChild(lowerContainer);
+
+    upperContainer.style = 'grid-row: 1/2; margin: 0 auto; font-family: "Times New Roman"; font-size: 25px; font-weight: bold;';
+
+    lowerContainer.style = 'grid-row: 2/3; display: grid; grid-template: 1fr 50px / repeat(2, 1fr)';
+
+    lowerLeftDiv.style = 'grid-column: 1/2; grid-row: 1/2; display: grid; grid-template: repeat(3, 1fr)/1fr; gap: 15px; margin: 10px 10px 0 10px;';
+
+    lowerRightDiv.style = 'grid-column: 2/3;';
+
+    rightTextArea.setAttribute('rows', 18); 
+    rightTextArea.setAttribute('cols', 90);
+    rightTextArea.setAttribute('placeholder', 'Write your comments here.');
+    rightTextArea.style = 'margin: 10px; '
+
+    lowerButton.style = 'grid-row: 2/3; grid-column: 2/3; padding: 10px';
+
+    contactContent.style = "display: grid; grid-template: repeat(2, 1fr) / 1fr;" +
+    "width: 1500px; height: 100vh; margin: 0 auto; background-image: url(/assets/1536017106.png);" +
+    "background-position: center; background-repeat: no-repeat; background-size: cover; opacity: 0.7;";
+    
+    return contactContent;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createContact);
 
 /***/ })
-
-/******/ 	});
+/******/ 	]);
 /************************************************************************/
 /******/ 	// The module cache
 /******/ 	var __webpack_module_cache__ = {};
@@ -263,7 +802,7 @@ eval("module.exports = __webpack_require__.p + \"374a5bb0424499f14c0c.png\";\n\n
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"main": 0
+/******/ 			0: 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -287,11 +826,161 @@ eval("module.exports = __webpack_require__.p + \"374a5bb0424499f14c0c.png\";\n\n
 /******/ 	})();
 /******/ 	
 /************************************************************************/
-/******/ 	
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/index.js");
-/******/ 	
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+(() => {
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _contact__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(13);
+
+
+// import './menu';
+
+
+// Create elements dynamically
+const masterContainer = document.createElement('div');
+   
+// Navigation elements
+const navContainer = document.createElement('div');
+const content = document.createElement('div');
+const restaurantName = document.createElement('div');
+const restaurantActionBtns = document.createElement('div');
+const btns = document.createElement('div');
+const selectPages = document.createElement('div');
+const pageLabel = document.createElement('label');
+const selection = document.createElement('select');
+const navIcon = document.createElement('i');
+const navH1 = document.createElement('h1');
+
+// Content elements
+const divider = document.createElement('div');
+const details = document.createElement('div');
+const welcome = document.createElement('h1');
+const introduction = document.createElement('p');
+const command = document.createElement('button');
+
+    // Append options to select element
+    const optionList = ['Booking', 'Our Teams', 'Testimonials'];
+    optionList.forEach(option => {
+        const opt = document.createElement('option');
+        opt.textContent = option;
+        selection.appendChild(opt);
+    })
+
+    // Append a label and select element to the selectPages div element
+    pageLabel.textContent = "Pages";
+    pageLabel.addEventListener('click', () => {
+        selection.focus();
+    }) 
+    selectPages.appendChild(pageLabel);
+    selection.classList.add('pages');
+    selectPages.appendChild(selection);
+
+    // Append icons and h1 elements to restaurantName div element
+    const restaurantNavIcons = ["fa-solid", "fa-utensils", "font"];
+    restaurantNavIcons.forEach(icon => {
+        navIcon.classList.add(icon);
+    })
+    restaurantName.appendChild(navIcon);
+    navH1.classList.add('name');
+    navH1.textContent = 'Zulka';
+    restaurantName.appendChild(navH1);
+
+    // Append buttons to btns div element
+    const btnNames = ['Home', 'About', 'Service', 'Menu'];
+    btnNames.forEach(btn => {
+        const button = document.createElement('button');
+        button.textContent = btn;
+        button.classList.add(btn);
+        btns.appendChild(button);
+    })
+
+    // Append btns and selectPages div elements to the restaurantActionBtns parent container
+    btns.classList.add('btns');
+    restaurantActionBtns.appendChild(btns);
+    selectPages.classList.add('select-pages');
+    restaurantActionBtns.appendChild(selectPages);
+
+    restaurantName.classList.add('restaurant-name');
+    navContainer.appendChild(restaurantName);
+    restaurantActionBtns.classList.add('restaurant-action-btns');
+    navContainer.appendChild(restaurantActionBtns);
+
+const createContent = function(){
+    // Append elements to content container
+    welcome.textContent = 'Enjoy our delicious meals';
+    welcome.classList.add('welcome');
+    introduction.classList.add('introduction');
+    introduction.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    command.classList.add('command');
+    command.textContent = "BOOK A TABLE";
+    details.appendChild(welcome);
+    details.appendChild(introduction);
+    details.appendChild(command);
+    details.classList.add('details');
+
+    divider.appendChild(details);
+    divider.classList.add('divider');
+    content.appendChild(divider);
+
+    navContainer.classList.add('nav');
+    content.classList.add('content');
+
+    
+    return { content, navContainer };
+}()
+
+const contact = (0,_contact__WEBPACK_IMPORTED_MODULE_1__["default"])();
+
+
+masterContainer.classList.add('main-container');
+masterContainer.appendChild(createContent.navContainer);
+masterContainer.appendChild(createContent.content);
+document.body.appendChild(masterContainer);
+
+
+window.onload = loadPage();
+
+
+btns.addEventListener('click', (event) => {
+    const clickedButton = event.target.closest('button');
+    if(clickedButton.classList.contains('Home')){
+        clickedButton.style = 'box-shadow: 2px 2px 5px green';
+        document.body.removeChild(masterContainer)
+        document.body.appendChild(masterContainer);
+        masterContainer.classList.add('main-container');
+        masterContainer.appendChild(createContent.navContainer);
+        masterContainer.appendChild(createContent.content);
+        if(contact.parentNode === masterContainer){
+            masterContainer.removeChild(contact)
+        }
+    }
+    else if(clickedButton.classList.contains('Service')){
+        clickedButton.style = 'box-shadow: 2px 2px 5px green';
+    }
+    else if(clickedButton.classList.contains('About')){
+        clickedButton.style = 'box-shadow: 2px 2px 5px green';
+        document.body.removeChild(masterContainer)
+        document.body.appendChild(masterContainer);
+        masterContainer.classList.add('main-container');
+        masterContainer.appendChild(createContent.navContainer);
+        masterContainer.appendChild(contact);
+        if(createContent.content.parentNode === masterContainer){
+            masterContainer.removeChild(createContent.content)
+        }
+    }
+    else if(clickedButton.classList.contains('Menu')){
+        clickedButton.style = 'box-shadow: 2px 2px 5px green';
+    }
+})
+
+function loadPage(){
+    masterContainer.classList.add('main-container');
+    masterContainer.appendChild(createContent.navContainer);
+    masterContainer.appendChild(createContent.content);
+    document.body.appendChild(masterContainer);
+}
+})();
+
 /******/ })()
 ;
